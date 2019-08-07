@@ -13,7 +13,6 @@ import Register from "./components/auth/Register";
 import Login from "./components/auth/Login";
 import PrivateRoute from "./components/private-route/PrivateRoute";
 import Dashboard from "./components/dashboard/Dashboard";
-
 import "./App.css";
 
 // Check for token to keep user logged in
@@ -30,11 +29,11 @@ if (localStorage.jwtToken) {
   if (decoded.exp < currentTime) {
     // Logout user
     store.dispatch(logoutUser());
-
-    // Redirect to login
+    // Redirect link, in this case to the login
     window.location.href = "./login";
   }
 }
+
 class App extends Component {
   render() {
     return (
